@@ -1,0 +1,302 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This is a modified ONE COLUMN version of
+% the following template:
+% 
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.1 (30/4/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper]{deedy-resume-openfont}
+\RequirePackage{color,graphicx}
+\usepackage{graphicx}
+\usepackage{fontspec}
+\graphicspath{ {./images/} }
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{hyperref,url}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour,citecolor=linkcolour,anchorcolor=linkcolour}
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\namesection{Hélio}{Assakura}{ Rua Boturoca, 137 - São Paulo, Brazil \\
+\href{mailto:helio.assakura@gmail.com}{helio.assakura@gmail.com} | +55 11 98818 6099\\
+\includegraphics[scale=0.33]{github32.png}\space\href{https://github.com/hassakura}  {\emph{hassakura}} \enspace \includegraphics[scale=0.75]{linkedin.png}\space\href{https://www.linkedin.com/in/hassakura/}{\emph{hassakura}}
+\includegraphics[scale = 0.027]{lungy.png}\space\href{https://linux.ime.usp.br/~hideki/mac0499/index.html}{\emph{Lungy}}
+}
+
+\bigskip
+% \bigskip
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Experience
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experience}
+\begin{tabular}{@{}c c}
+\begin{minipage}{0.06\textwidth}
+    \includegraphics[scale=0.12]{rappi_logo_crop.png}
+\end{minipage}
+&
+\begin{minipage}{0.94\textwidth}
+    \runsubsection{Rappi}
+    \descript{| Business Intelligence Specialist}
+    \location{Oct 2018 - Present | São Paulo, SP, Brazil}
+    % \vspace{\topsep}
+\end{minipage}
+\end{tabular}
+
+\littlesectionsep
+
+\textbf{\descript{Restaurant Advertisement (August 2020 – Present)}}
+
+\begin{tightemize}
+    \item Together with the commercial team, we defined most of the KPIs and metrics (ROAS, revenue, repurchase, clicks and others) to measure the performance of the products (Home, Tag, Search and Paid Media) (3 Analysts team)
+    \item Built an infrastructure and ETLs using Apache Airflow and cronjobs to be able to handle a great amount of data, such as clicks and impressions of all of Rappi's restaurants
+    % \item Created most of the Paid Media campaigns performance reports, using Facebook Ads and Rappi's metrics
+    \item With 2 more analysts, we built most of the data infrastructure and the reports used by all the restaurants advertisement team and by the restaurants themselves, increasing the revenue by 10x in 9 months.
+    \item Currently working on analysis to change the product from a fixed price to a Pay Per Click style, helping defining the path and generating product insights.
+\end{tightemize}
+
+\textbf{\descript{Expansion and Pricing (May 2019 – November 2020)}}
+\begin{tightemize}
+    \item Generated 460k restaurant leads in Brazil and close to 600k in LatAm for Rappi's expansion, cost free, after Softbank's investiment in April 30th, 2019 (solo project).
+    \item With these leads, the Hunters team increased the amount of partner restaurants in Brazil by 95\% and 68\% in LatAm in 5 months (July 2019 - November 2019), with much more to grow. This data was built in a way to allow other areas in Rappi to use for their projects, and it's still being used to generate reports of market share, projected sales and pricing of the competitors for investors and the directors.
+    \item Built a simple infrastructure with Amazon AWS solutions (EC2 and S3) to run a lead generator python script and store all the data (solo project) and helped with the creation and maintenance of a CRM-like tool in Retool to allow leads management by all LatAm hunters and supervisors (2 BI Analysts team).
+    \item Kept tracking the delivery prices of all of Rappi's competitors, given weather conditions, days of week and the hours of consuming, using third-party APIs and integrations, helping the data scientists to develop a better delivery pricing model.
+\end{tightemize}
+
+
+
+% \begin{tightemize}
+    
+% \end{tightemize}
+
+\textbf{\descript{\large{Another areas and projects}}}
+\begin{tightemize}
+\item \textbf{\location{Growth (September 2019 – December 2019)}} With the BI team, developed a tool on Retool to automatically and correctly select and send promotions to cohorts for A/B testing by the data science squad (4 BI Analysts team, 3 days bootcamp), creating dashboards for tests performance measurement and for users segmentation, allowing to target promotions to all kind of users and increasing the number of campaigns from hundreds to thousands.
+
+\item \textbf{\location{Fraud Prevention (December 2018 – May 2019)}} Responsible for the creation, maintenance and analysis of fraud rules in all of Rappi's verticals with the objective of reducing the chargeback ratio to less than 1\%, and the creation of dashboards to track the rule's efficiency.
+
+% \item \textbf{\location{CPGs (October 2018 - December 2018)}} Helped the CPGs team to check products availability automatically and scrapped retailer websites in Brazil and LatAm to get product images and descriptions
+
+\item \textbf{\location{Catalogs (April 2020 - August 2020)}} Using third party APIs, got more than 2 millions SKUs information to change Rappi's CPGs catalog database infrastructure, creating a \emph{parent-child} model of organizing products by their SKU.
+\end{tightemize}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Education
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education}
+
+\begin{tabular}{@{}c c}
+\begin{minipage}{0.075\textwidth}
+    \includegraphics[scale=0.12]{images/usp_logo.png}
+\end{minipage}
+&
+\begin{minipage}{0.925\textwidth}
+\runsubsection{University of São Paulo}
+\descript{| Bachelor in Computer Science}
+\location{Institute of Mathematics and Statistics | Jan 2014 - Dec 2018 | São Paulo, SP, Brazil}
+\textbf{Project}: \href{https://linux.ime.usp.br/~hideki/mac0499/index.html}{\includegraphics[scale = 0.025]{lungy.png}} ``Lungy - An app that determines the breakeven point where any additional physical activity will cause adverse health effects by air pollution`` | {\small Advisors: Rômulo Bertuzzi and Alfredo Goldman}\\
+
+Grade: \textbf{7.6} / 10.0 \textbullet{} \textbf{9º} of 37 \textbullet{} \url{https://www.linux.ime.usp.br/\~hideki/grades.pdf}
+    % \vspace{\topsep}
+\end{minipage}
+\end{tabular}
+
+
+
+% \href{https://www.linux.ime.usp.br/\~hideki/grades.pdf}{https://www.linux.ime.usp.br/\~hideki/grades.pdf}
+\sectionsep
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Other Activities
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Languages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Skills}
+
+\begin{tabular}{@{}c c c}
+    \begin{minipage}[t]{.2\textwidth}
+        \subsection{Programming Languages}
+        \sectionsep
+        \location{Python \textbullet{} PostgreSQL \textbullet{} Snowflake \textbullet{} C}
+% \littlesectionsep
+% \location{}
+    \end{minipage}
+&
+    \begin{minipage}[t]{.24\textwidth}
+        \subsection{Technologies}
+        \littlesectionsep
+        \location{\textbf{PowerBI} \textbullet{} Amazon EC2 \textbullet{} Amazon S3 \textbullet{} Git \textbullet{} Apache Airflow \textbullet{} Excel \textbullet{} Sift Science \textbullet{} Periscope \textbullet{} Looker}
+        % \littlesectionsep
+        % \sublocation{Basic Knowledge}
+        % \sectionsep
+        % \location{PowerBI \textbullet{} Apache Airflow \textbullet{} Looker}
+    \end{minipage}
+&
+    \begin{minipage}[t]{.56\textwidth}
+        \subsection{Languages}
+        \begin{tabular}{@{}c c c}
+            \begin{minipage}[t]{.285\linewidth}
+                \descript{English}
+            % \sectionsep
+                \location{Advanced} Written \& Spoken
+% \littlesectionsep
+% \location{}
+            \end{minipage}
+            &
+            \begin{minipage}[t]{.285\linewidth}
+                \descript{Spanish}
+            % \sectionsep
+                \location{Intermediate} Listen \& Written
+% \littlesectionsep
+% \location{}
+            \end{minipage}
+            &
+            \begin{minipage}[t]{.285\linewidth}
+                \descript{Portuguese}
+            % \sectionsep
+                \location{Native fluency} Written \& Spoken
+% \littlesectionsep
+% \location{}
+            \end{minipage}
+        \end{tabular}
+    %  &  \\
+    %  &
+    \end{minipage}
+\end{tabular}
+
+% \hfill
+% \begin{minipage}[t]{.25\textwidth}
+% \subsection{Technologies}
+% \littlesectionsep
+% \location{Periscope \textbullet{} Amazon EC2 \textbullet{} Amazon S3 \textbullet{} Git \textbullet{} Sift Science}
+% \littlesectionsep
+% \sublocation{Basic Knowledge}
+% \sectionsep
+% \location{PowerBI \textbullet{} Apache Airflow \textbullet{} Looker}
+% \end{minipage}
+% \hfill
+% \begin{minipage}[t]{.15\textwidth}
+% \subsection{Languages}
+% \littlesectionsep
+% % \descript{English}
+% % \littlesectionsep
+% % \begin{center}
+% % \begin{tabular}{ c c c }
+%  \descript{English} \location{Advanced}: Written \& Spoken
+%  \end{minipage}
+ 
+ 
+% %  \hfill
+% \begin{minipage}[t]{.15\textwidth}
+% \subsection{}
+% \littlesectionsep
+% \descript{English} \location{Advanced}: Written \& Spoken
+% \end{minipage}
+%  & \textbf{Spanish} & \textbf{Portuguese} \\ 
+%  \location{Advanced:} & \location{Advanced:} & \location{Advanced:} \\
+%  Written \& Spoken
+%  & Written \& Spoken & Written \& Spoken
+%  cell7 & cell8 & cell9    
+% \end{tabular}
+% \end{center}
+% \location{Advanced:} Written \& Spoken\\
+% \descript{Spanish}
+% \littlesectionsep
+% \location{Intermediate:} Listen \& Written\\
+% \descript{Portuguese}
+% \littlesectionsep
+% \location{Native fluency:} Listen \& Written \& Spoken\\
+% \end{minipage}
+% \begin{minipage}[t]{.3\textwidth}
+% \subsection{Languages}
+% \sectionsep
+% \descript{Spoken \& Written}
+% \sectionsep
+% \location{Native fluency:} Portuguese\\
+% \location{Advanced:} English\\
+% \end{minipage}
+% \hfill
+% \begin{minipage}[t]{.3\textwidth}
+% \subsection{Courses and other activities}
+% \sectionsep
+% \descript{Awards}
+% \location{2x honorable mention award in the Brazilian Mathematics Olympiad of Public Schools – OBMEP}
+% \end{minipage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Other stuff
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\end{document}  \documentclass[]{article}
